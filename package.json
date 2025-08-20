@@ -1,0 +1,16 @@
+{
+  "name": "playwright-muat2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "author": "shidqi adiatma",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.2.1"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^12.1.0"
+  }
+}

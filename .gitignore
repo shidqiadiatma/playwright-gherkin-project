@@ -1,0 +1,12 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+error-resetpassword.png
+package-lock.json
+report.html
+tests/example.spec.js
+tests-examples/demo-todo-app.spec.js
