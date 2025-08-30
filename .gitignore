@@ -8,5 +8,6 @@ node_modules/
 error-resetpassword.png
 package-lock.json
 report.html
-tests/example.spec.js
-tests-examples/demo-todo-app.spec.js
+tests/
+tests-examples/
+features/support/credential.json

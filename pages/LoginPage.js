@@ -15,6 +15,7 @@ class LoginPage {
 
   async goto() {
     await this.page.goto('https://muatmuat.com/login');
+    await this.usernameInput.waitFor({ state: 'visible', timeout: 15000 });
   }
 
   async fillUsername(username) {

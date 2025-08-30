@@ -1,7 +1,8 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { ResetPasswordPage } = require('../../pages/ResetPasswordPage');
+const testdata = require('../support/credential.json');
 const { setDefaultTimeout } = require('@cucumber/cucumber');
-setDefaultTimeout(10000); // 10 detik
+setDefaultTimeout(10000); 
 let resetPasswordPage;
 
 Given('user membuka halaman reset password', async function () {
@@ -14,8 +15,7 @@ When('user mengisi nomor telepon untuk reset password yaitu {string}', async fun
 });
 
 When('user mengisi nomor telepon yang sudah terdaftar', async function () {
-  // Ganti dengan nomor yang memang sudah terdaftar di test Anda
-  await resetPasswordPage.fillNomorWhatsapp('089654961080');
+  await resetPasswordPage.fillNomorWhatsapp(testdata.nomorSudahTerdaftar);
 });
 
 When('user klik tombol Cari Akun', async function () {
@@ -24,7 +24,7 @@ When('user klik tombol Cari Akun', async function () {
 });
 
 When('user mengisi kode OTP yang salah', async function () {
-  await resetPasswordPage.fillOTP('123456'); // Ganti dengan kode OTP yang salah
+  await resetPasswordPage.fillOTP('123456');
 });
 
 Then('muncul peringatan reset password {string}', async function (message) {

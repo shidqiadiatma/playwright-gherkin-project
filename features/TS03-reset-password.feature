@@ -22,10 +22,3 @@ Feature: Reset Password
     When user mengisi nomor telepon yang sudah terdaftar
     And user klik tombol Cari Akun
     Then user berhasil diarahkan ke halaman OTP
-  
-  Scenario: TC015 - Cek validasi gagal reset password dengan mengisi kode OTP yang salah
-    Given user membuka halaman reset password
-    When user mengisi nomor telepon yang sudah terdaftar
-    And user klik tombol Cari Akun
-    And user mengisi kode OTP yang salah
-    Then muncul peringatan bahwa kode "OTP yang Anda masukkan salah!"

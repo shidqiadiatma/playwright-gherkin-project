@@ -2,7 +2,9 @@
   "name": "playwright-muat2",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "cucumber": "cucumber-js --format progress"
+  },
   "author": "shidqi adiatma",
   "license": "ISC",
   "description": "",
@@ -11,6 +13,7 @@
     "@types/node": "^24.2.1"
   },
   "dependencies": {
-    "@cucumber/cucumber": "^12.1.0"
+    "@cucumber/cucumber": "^12.1.0",
+    "express": "^5.1.0"
   }
 }

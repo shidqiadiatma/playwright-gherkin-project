@@ -1,7 +1,9 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { RegisterPage } = require('../../pages/RegisterPage');
+const testdata = require('../support/credential.json');
 const { setDefaultTimeout } = require('@cucumber/cucumber');
-setDefaultTimeout(10000); // 10 detik
+setDefaultTimeout(10000);
+
 let registerPage;
 
 Given('user membuka halaman register', async function () {
@@ -14,13 +16,11 @@ When('user mengisi nama lengkap {string}', async function (namaLengkap) {
 });
 
 When('user mengisi nomor whatsapp untuk register yang belum terdaftar', async function () {
-  // Ganti dengan nomor yang belum pernah dipakai untuk test
-  await registerPage.nomorTelepon.fill('0878632582323');
+  await registerPage.nomorTelepon.fill(testdata.nomorBelumTerdaftar);
 });
 
 When('user mengisi nomor whatsapp untuk register yang sudah terdaftar', async function () {
-  // Ganti dengan nomor yang sudah pernah dipakai untuk test
-  await registerPage.nomorTelepon.fill('089654961080');
+  await registerPage.nomorTelepon.fill(testdata.nomorSudahTerdaftar);
 });
 
 When('user mengisi password {string}', async function (password) {

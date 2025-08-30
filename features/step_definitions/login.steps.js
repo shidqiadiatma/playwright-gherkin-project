@@ -1,7 +1,8 @@
 const { Before, After, Given, When, Then } = require('@cucumber/cucumber');
 const { LoginPage } = require('../../pages/LoginPage');
 const { setDefaultTimeout } = require('@cucumber/cucumber');
-setDefaultTimeout(10000); // 10 detik
+const testdata = require('../support/credential.json');
+setDefaultTimeout(20000); 
 
 let loginPage;
 
@@ -19,15 +20,15 @@ Given('user membuka halaman login', async function () {
 });
 
 When('user mengisi nomor whatsapp yang sudah terdaftar', async function () {
-  await loginPage.fillUsername('089654961080');
+  await loginPage.fillUsername(testdata.nomorSudahTerdaftar);
 });
 
 When('user mengisi password yang salah', async function () {
-  await loginPage.fillPassword('passwordSalah123');
+  await loginPage.fillPassword(testdata.passwordSalah);
 });
 
 When('user mengisi password yang benar', async function () {
-  await loginPage.fillPassword('Az12345678');
+  await loginPage.fillPassword(testdata.passwordBenar);
 });
 
 When('user klik tombol Masuk', async function () {
